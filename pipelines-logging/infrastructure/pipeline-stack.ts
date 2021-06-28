@@ -5,7 +5,7 @@ import { CfnConnection } from "@aws-cdk/aws-codestarconnections"
 import { Artifact } from "@aws-cdk/aws-codepipeline"
 import { CodeStarConnectionsSourceAction } from "@aws-cdk/aws-codepipeline-actions"
 
-import { ServiceStack } from "./service-stack"
+import { ServiceStack } from "./lambda-stack"
 
 class App extends Stage {
   constructor(scope: Construct, id: string, props?: StageProps) {
