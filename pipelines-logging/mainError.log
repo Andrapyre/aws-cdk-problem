@@ -1,0 +1,134 @@
+[Container] 2021/06/26 16:36:01 Waiting for agent ping
+[Container] 2021/06/26 16:36:04 Waiting for DOWNLOAD_SOURCE
+[Container] 2021/06/26 16:36:04 Phase is DOWNLOAD_SOURCE
+[Container] 2021/06/26 16:36:04 CODEBUILD_SRC_DIR=/codebuild/output/src258481444/src
+[Container] 2021/06/26 16:36:04 YAML location is /codebuild/readonly/buildspec.yml
+[Container] 2021/06/26 16:36:04 Processing environment variables
+[Container] 2021/06/26 16:36:05 No runtime version selected in buildspec.
+[Container] 2021/06/26 16:36:05 Moving to directory /codebuild/output/src258481444/src
+[Container] 2021/06/26 16:36:05 Registering with agent
+[Container] 2021/06/26 16:36:05 Phases found in YAML: 2
+[Container] 2021/06/26 16:36:05  INSTALL: 1 commands
+[Container] 2021/06/26 16:36:05  BUILD: 1 commands
+[Container] 2021/06/26 16:36:05 Phase complete: DOWNLOAD_SOURCE State: SUCCEEDED
+[Container] 2021/06/26 16:36:05 Phase context status code:  Message: 
+[Container] 2021/06/26 16:36:05 Entering phase INSTALL
+[Container] 2021/06/26 16:36:05 Running command npm install -g aws-cdk
+/usr/local/bin/cdk -> /usr/local/lib/node_modules/aws-cdk/bin/cdk
+
+> aws-sdk@2.932.0 postinstall /usr/local/lib/node_modules/aws-cdk/node_modules/aws-sdk
+> node scripts/check-node-version.js
+
++ aws-cdk@1.110.0
+added 181 packages from 216 contributors in 6.717s
+
+[Container] 2021/06/26 16:36:16 Phase complete: INSTALL State: SUCCEEDED
+[Container] 2021/06/26 16:36:16 Phase context status code:  Message: 
+[Container] 2021/06/26 16:36:16 Entering phase PRE_BUILD
+[Container] 2021/06/26 16:36:16 Phase complete: PRE_BUILD State: SUCCEEDED
+[Container] 2021/06/26 16:36:16 Phase context status code:  Message: 
+[Container] 2021/06/26 16:36:16 Entering phase BUILD
+[Container] 2021/06/26 16:36:16 Running command cdk -a . deploy TrialPipeline --require-approval=never --verbose
+CDK toolkit version: 1.110.0 (build 32f00eb)
+Command line arguments: {
+  _: [ 'deploy' ],
+  a: '.',
+  app: '.',
+  'require-approval': 'never',
+  requireApproval: 'never',
+  verbose: 1,
+  v: 1,
+  lookups: true,
+  'ignore-errors': false,
+  ignoreErrors: false,
+  json: false,
+  j: false,
+  debug: false,
+  ec2creds: undefined,
+  i: undefined,
+  'version-reporting': undefined,
+  versionReporting: undefined,
+  'path-metadata': true,
+  pathMetadata: true,
+  'asset-metadata': true,
+  assetMetadata: true,
+  'role-arn': undefined,
+  r: undefined,
+  roleArn: undefined,
+  staging: true,
+  'no-color': false,
+  noColor: false,
+  fail: false,
+  all: false,
+  'build-exclude': [],
+  E: [],
+  buildExclude: [],
+  ci: false,
+  execute: true,
+  force: false,
+  f: false,
+  parameters: [ {} ],
+  'previous-parameters': true,
+  previousParameters: true,
+  '$0': '/usr/local/bin/cdk',
+  STACKS: [ 'TrialPipeline' ],
+  'S-t-a-c-k-s': [ 'TrialPipeline' ]
+}
+merged settings: {
+  versionReporting: true,
+  pathMetadata: true,
+  output: 'cdk.out',
+  app: '.',
+  context: {},
+  debug: false,
+  assetMetadata: true,
+  requireApproval: 'never',
+  toolkitBucket: {},
+  staging: true,
+  bundlingStacks: [ '*' ],
+  lookups: true
+}
+Toolkit stack: CDKToolkit
+Setting "CDK_DEFAULT_REGION" environment variable to us-west-2
+Resolving default credentials
+Looking up default account ID from STS
+Default account ID: {ACCOUNT_NUMBER}
+Setting "CDK_DEFAULT_ACCOUNT" environment variable to {ACCOUNT_NUMBER}
+context: {
+  'aws:cdk:enable-path-metadata': true,
+  'aws:cdk:enable-asset-metadata': true,
+  'aws:cdk:version-reporting': true,
+  'aws:cdk:bundling-stacks': [ '*' ]
+}
+--app points to a cloud assembly, so we bypass synth
+TrialPipeline: deploying...
+Retrieved account ID {ACCOUNT_NUMBER} from disk cache
+Assuming role 'arn:aws:iam::{ACCOUNT_NUMBER}:role/cdk-hnb659fds-deploy-role-{ACCOUNT_NUMBER}-us-west-2'.
+Assuming role failed: User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::{ACCOUNT_NUMBER}:role/cdk-hnb659fds-deploy-role-{ACCOUNT_NUMBER}-us-west-2
+Could not assume role in target account using current credentials User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::{ACCOUNT_NUMBER}:role/cdk-hnb659fds-deploy-role-{ACCOUNT_NUMBER}-us-west-2 . Please make sure that this role exists in the account. If it doesn't exist, (re)-bootstrap the environment with the right '--trust', using the latest version of the CDK CLI.
+current credentials could not be used to assume 'arn:aws:iam::{ACCOUNT_NUMBER}:role/cdk-hnb659fds-deploy-role-{ACCOUNT_NUMBER}-us-west-2', but are for the right account. Proceeding anyway.
+Waiting for stack CDKToolkit to finish creating or updating...
+Call failed: getParameter({"Name":"/cdk-bootstrap/hnb659fds/version"}) => User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: ssm:GetParameter on resource: arn:aws:ssm:us-west-2:{ACCOUNT_NUMBER}:parameter/cdk-bootstrap/hnb659fds/version (code=AccessDeniedException)
+
+ ❌  TrialPipeline failed: Error: TrialPipeline: User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: ssm:GetParameter on resource: arn:aws:ssm:us-west-2:{ACCOUNT_NUMBER}:parameter/cdk-bootstrap/hnb659fds/version
+    at CloudFormationDeployments.validateBootstrapStackVersion (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:296:13)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at CloudFormationDeployments.publishStackAssets (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:271:7)
+    at CloudFormationDeployments.deployStack (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:179:5)
+    at CdkToolkit.deploy (/usr/local/lib/node_modules/aws-cdk/lib/cdk-toolkit.ts:180:24)
+    at initCommandLine (/usr/local/lib/node_modules/aws-cdk/bin/cdk.ts:212:9)
+TrialPipeline: User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: ssm:GetParameter on resource: arn:aws:ssm:us-west-2:{ACCOUNT_NUMBER}:parameter/cdk-bootstrap/hnb659fds/version
+Error: TrialPipeline: User: arn:aws:sts::{ACCOUNT_NUMBER}:assumed-role/TrialPipeline-TrialPipelineUpdatePipel-YMLVZZYHR9J0/AWSCodeBuild-2d27283f-aa07-4074-813a-954637ad3dcd is not authorized to perform: ssm:GetParameter on resource: arn:aws:ssm:us-west-2:{ACCOUNT_NUMBER}:parameter/cdk-bootstrap/hnb659fds/version
+    at CloudFormationDeployments.validateBootstrapStackVersion (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:296:13)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at CloudFormationDeployments.publishStackAssets (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:271:7)
+    at CloudFormationDeployments.deployStack (/usr/local/lib/node_modules/aws-cdk/lib/api/cloudformation-deployments.ts:179:5)
+    at CdkToolkit.deploy (/usr/local/lib/node_modules/aws-cdk/lib/cdk-toolkit.ts:180:24)
+    at initCommandLine (/usr/local/lib/node_modules/aws-cdk/bin/cdk.ts:212:9)
+
+[Container] 2021/06/26 16:36:17 Command did not exit successfully cdk -a . deploy TrialPipeline --require-approval=never --verbose exit status 1
+[Container] 2021/06/26 16:36:17 Phase complete: BUILD State: FAILED
+[Container] 2021/06/26 16:36:17 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: cdk -a . deploy TrialPipeline --require-approval=never --verbose. Reason: exit status 1
+[Container] 2021/06/26 16:36:17 Entering phase POST_BUILD
+[Container] 2021/06/26 16:36:17 Phase complete: POST_BUILD State: SUCCEEDED
+[Container] 2021/06/26 16:36:17 Phase context status code:  Message: 
